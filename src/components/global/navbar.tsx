@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Navbar = async () => {
@@ -13,6 +14,31 @@ const Navbar = async () => {
           height={15}
           className="shadow-sm"
         />
+      </aside>
+      <nav className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
+        <ul className="flex items-center gap-4 list-none">
+          <li>
+            <Link href="a">Products</Link>
+          </li>
+          <li>
+            <Link href="a">Pricing</Link>
+          </li>
+          <li>
+            <Link href="a">Clients</Link>
+          </li>
+          <li>
+            <Link href="a">Resources</Link>
+          </li>
+          <li>
+            <Link href="a">Documentation</Link>
+          </li>
+          <li>
+            <Link href="a">Enterprise</Link>
+          </li>
+        </ul>
+      </nav>
+      <aside className="flex items-center gap-4">
+        <Link href="dashboard"></Link>
       </aside>
     </header>
   );
