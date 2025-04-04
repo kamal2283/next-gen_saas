@@ -2,6 +2,7 @@ import ProfileForm from "@/components/forms/profile-form";
 import React from "react";
 import ProfilePicture from "./_components/profile-picture";
 import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs"; // Or whatever auth library you're using
 
 type Props = {};
 
@@ -42,3 +43,5 @@ const Settings = (props: Props) => {
 };
 
 export default Settings;
+
+// 2:29:01
