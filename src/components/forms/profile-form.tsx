@@ -79,3 +79,5 @@ const ProfileForm = (props: Props) => {
 
 export default ProfileForm;
 //1:42:08
+// TODO fix the databse problem where the user is not being saved in the database
+// so work with profile form and settings page

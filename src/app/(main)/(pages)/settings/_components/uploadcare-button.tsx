@@ -33,7 +33,7 @@ const UploadCareButton = ({ onUpload }: Props) => {
         sourceList="local, camera, facebook, gdrive"
         cameraModes="photo, video"
         classNameUploader="uc-dark"
-        pubkey="a9428ff5ff90ae7a64eb" // Keeping your original pubkey
+        pubkey="8202415e5c4637497d1f" // Keeping your original pubkey
         onFileUploadSuccess={handleUploadSuccess}
       />
     </div>
