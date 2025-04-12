@@ -1,8 +1,11 @@
 import React from "react";
-
+import ConnectionCard from "./_components/connection-card";
+import { CONNECTIONS } from "@/lib/constant";
 type Props = {
   searchPrams?: { [key: string]: string | undefined };
 };
+
+//WIP: Connections to be completed
 
 const Connections = (props: Props) => {
   return (
@@ -14,6 +17,16 @@ const Connections = (props: Props) => {
         <section className="flex flex-col gap-4 p-6 text-muted-foreground">
           Connect all your apps directly from here. You may need to connect
           these apps regularly to referesh verification
+          {CONNECTIONS.map((connection) => (
+            <ConnectionCard
+              key={connection.title}
+              description={connection.description}
+              title={connection.title}
+              icon={connection.image}
+              type={connection.title}
+              //connected={connections}
+            />
+          ))}
         </section>
       </div>
     </div>
