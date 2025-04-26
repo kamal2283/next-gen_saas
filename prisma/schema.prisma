@@ -121,3 +121,5 @@ model Workflows {
   User              User     @relation(fields: [userId], references: [clerkId])
   userId            String
 }
+
+// what should if want to connect this whole project with loca postgres sql and not witn neondb postgres

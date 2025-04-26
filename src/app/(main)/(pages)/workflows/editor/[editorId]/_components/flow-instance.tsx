@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 // Import from your own provider instead of @xyflow/react
-import { useNodeConnections } from "@/providers/connections.provider";
+import { useNodeConnections } from "@/providers/connections-provider";
 import { usePathname } from "next/navigation";
 import React, { useCallback, useState } from "react";
 import { toast } from "sonner";
