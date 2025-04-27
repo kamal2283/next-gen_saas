@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 // Import from your own provider instead of @xyflow/react
 import { useNodeConnections } from "@/providers/connections-provider";
 import { usePathname } from "next/navigation";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import {
   onCreateNodesEdges,
@@ -44,7 +44,24 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
     // Extract the editorId from the URL pathname
     const response = await onFlowPublish(pathname.split("/").pop()!, true);
     if (response) toast.message(response);
-  }, [pathname]);
+  }, []);
+
+  const onAutomateFlow = async () => {
+    const flows: any = [];
+    const connectedEdges = edges.map((edge) => edge.target);
+    connectedEdges.map((target) => {
+      nodes.forEach((node) => {
+        if (node.id === target) {
+          flows.push(node);
+        }
+      });
+    });
+    setIsFlow(flows);
+  };
+
+  useEffect(() => {
+    onAutomateFlow();
+  }, [edges]);
 
   return (
     <div className="flex flex-col gap-2">

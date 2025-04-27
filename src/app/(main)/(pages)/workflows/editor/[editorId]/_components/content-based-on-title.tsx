@@ -1,4 +1,4 @@
-import { AccordionContent } from "../../../../../../../components/ui/accordian";
+import { AccordionContent } from "@/components/ui/accordian";
 import {
   Card,
   CardContent,
@@ -13,6 +13,8 @@ import { EditorState } from "@/providers/editor-provider";
 import React from "react";
 import GoogleFileDetails from "./google-file-details";
 import GoogleDriveFiles from "./google-drive-files";
+import ActionButton from "./action-button";
+import { nodeMapper } from "@/lib/types";
 
 export interface Option {
   value: string;

@@ -4,7 +4,7 @@ import { useEditor } from "@/providers/editor-provider";
 import { useNodeConnections } from "@/providers/connections-provider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 import {
   Card,
@@ -22,6 +22,8 @@ import {
   AccordionTrigger,
 } from "../../../../../../../components/ui/accordian";
 import RenderConnectionAccordion from "./render-connections-accordion";
+import RenderOutputAccordion from "./render-output-accordion";
+import { useFuzzieStore } from "@/store";
 type Props = {
   nodes: EditorNodeType[];
 };
@@ -29,6 +31,12 @@ type Props = {
 const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { state } = useEditor();
   const { nodeConnection } = useNodeConnections();
+  const { googleFile, setSlackChannels } = useFuzzieStore();
+  useEffect(() => {
+    if (state) {
+      // onConnections(nodeConnection, state, googleFile);
+    }
+  }, [state]);
 
   return (
     <aside>
@@ -87,10 +95,10 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
               <AccordionTrigger className="!no-underline">
                 Action
               </AccordionTrigger>
-              {/* <RenderOutputAccordion
+              <RenderOutputAccordion
                 state={state}
                 nodeConnection={nodeConnection}
-              /> */}
+              />
             </AccordionItem>
           </Accordion>
         </TabsContent>
@@ -100,4 +108,4 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
 };
 
 export default EditorCanvasSidebar;
-//4:09:43
+//4:51:29

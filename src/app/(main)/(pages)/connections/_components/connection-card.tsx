@@ -1,12 +1,12 @@
+import { ConnectionTypes } from "@/lib/types";
+import React from "react";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ConnectionTypes } from "@/lib/types";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
 
 type Props = {
@@ -32,8 +32,8 @@ const ConnectionCard = ({
           <Image
             src={icon}
             alt={title}
-            width={30}
             height={30}
+            width={30}
             className="object-contain"
           />
         </div>
