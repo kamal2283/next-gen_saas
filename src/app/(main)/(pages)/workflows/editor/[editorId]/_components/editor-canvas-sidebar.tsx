@@ -34,7 +34,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { googleFile, setSlackChannels } = useFuzzieStore();
   useEffect(() => {
     if (state) {
-      // onConnections(nodeConnection, state, googleFile);
+       onConnections(nodeConnection, state, googleFile);
     }
   }, [state]);
 
