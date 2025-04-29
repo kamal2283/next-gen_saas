@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/card";
 import EditorCanvasIconHelper from "./editor-canvas-card-icon-helper";
 import { CONNECTIONS, EditorCanvasDefaultCardTypes } from "@/lib/constant";
-import { onDragStart } from "@/lib/editor-utils";
+import { onConnections, onDragStart } from "@/lib/editor-utils";
 import {
   Accordion,
   AccordionContent,
@@ -34,7 +34,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { googleFile, setSlackChannels } = useFuzzieStore();
   useEffect(() => {
     if (state) {
-       onConnections(nodeConnection, state, googleFile);
+      onConnections(nodeConnection, state, googleFile);
     }
   }, [state]);
 

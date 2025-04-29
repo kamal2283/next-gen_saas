@@ -6,6 +6,8 @@
 
 generator client {
   provider = "prisma-client-js"
+  // Add this if you want to use the package.json approach
+  // previewFeatures = ["seed"]
 }
 
 datasource db {
